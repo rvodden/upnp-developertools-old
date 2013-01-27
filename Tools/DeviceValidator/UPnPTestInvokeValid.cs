@@ -39,8 +39,8 @@ namespace UPnPValidator.BasicTests
 	{
 		// Generic Test Variables
 		bool WARN_MASTER,WARN_VALID,WARN_ALLOWED,WARN_RANGE;
-		bool FAIL_MASTER,FAIL_VALID,FAIL_ALLOWED,FAIL_RANGE;
-
+		bool FAIL_MASTER,FAIL_ALLOWED,FAIL_RANGE;
+        bool FAIL_VALID = false;
 		// Specific Test Variables
 		[NonSerialized()] private ManualResetEvent MRE;
 

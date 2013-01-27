@@ -24,7 +24,7 @@ namespace UPnPValidator.BasicTests
     /// Summary description for BasicTestGroup.
     /// </summary>
     [Serializable()]
-    public abstract class BasicTestGroup : IUPnPTestGroup
+    public abstract class BasicTestGroup : IUPnPTestGroup, IDisposable
     {
         // Interface implementation
         public event EventHandler OnStateChanged;
@@ -141,6 +141,11 @@ namespace UPnPValidator.BasicTests
         protected DateTime StartTime;
         protected int TimeLeft = 0;
         protected int TotalTime = 0;
+
+        public void Dispose()
+        {
+            Countdown.Dispose();
+        }   
 
         public void AddResult(string result)
         {
